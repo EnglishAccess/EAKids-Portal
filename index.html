@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>ホーム | ENGLISH ACCESS/EA Kids</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: var(--text-color);
+            border-top: 5px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .menu-desc {
+            font-size: 0.95rem;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>ENGLISH ACCESS / EA Kids</h1>
+            <!-- Global Navigation -->
+            <nav class="global-nav">
+                <a href="index.html">ホーム</a>
+                <a href="2026-class-guide.html">クラス案内</a>
+                <a href="material-fees.html">教材費</a>
+                <a href="forms.html">届書提出</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero-section simple">
+            <h2 class="hero-title">Welcome to ENGLISH ACCESS</h2>
+        </section>
+
+        <!-- Main Contents -->
+        <section>
+            <h2 style="text-align: center; border: none; margin-bottom: 10px;">Menu</h2>
+            <div class="quick-access-grid">
+                <!-- Class Guide -->
+                <a href="2026-class-guide.html" class="quick-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>クラス案内</h3>
+                    <p>2026年度 詳細・スケジュール</p>
+                </a>
+
+                <!-- Material Fees -->
+                <a href="material-fees.html" class="quick-card">
+                    <i class="fas fa-book"></i>
+                    <h3>教材費一覧</h3>
+                    <p>各クラスの教材費を確認</p>
+                </a>
+
+                <!-- Forms -->
+                <a href="forms.html" class="quick-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>届書提出</h3>
+                    <p>各種お手続き (準備中)</p>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ENGLISH ACCESS/EA Kids</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,813 @@
+:root {
+    --primary-color: #2E8B57;
+    --secondary-color: #4682B4;
+    --accent-color: #FFA500;
+    --text-color: #333333;
+    --bg-color: #F9FDF9;
+    --card-bg: #FFFFFF;
+    --font-main: "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+    --font-heading: "Montserrat", sans-serif;
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Tabs */
+.tab-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 12px 25px;
+    border: 2px solid var(--secondary-color);
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.tab-btn.active {
+    background-color: var(--secondary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(70, 130, 180, 0.4);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.8rem;
+    border-bottom: 3px solid var(--accent-color);
+    display: table;
+    margin: 0 auto 30px;
+    padding-bottom: 5px;
+}
+
+/* Hero Title Specific Override */
+.hero-title {
+    color: white !important;
+    border-bottom: none !important;
+    font-size: 3.5rem !important;
+    margin-bottom: 0 !important;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important;
+    letter-spacing: 2px;
+}
+
+/* Notice */
+.notice {
+    background-color: #E3F2FD;
+    border-left: 5px solid var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+/* Grids */
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.two-col-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Cards */
+.class-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow-md);
+    border-top: 5px solid var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.class-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.class-card.no-shadow {
+    box-shadow: none;
+    border: 1px solid #eee;
+    border-top: none;
+}
+
+.class-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    /* Reduced bottom margin for tags */
+    font-size: 1.4rem;
+}
+
+/* Tag Styles */
+.card-tags {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+}
+
+.tag-preschool {
+    background-color: #FF69B4;
+    /* Hot Pink */
+}
+
+.tag-elementary {
+    background-color: var(--primary-color);
+    /* SeaGreen */
+}
+
+.tag-teens {
+    background-color: var(--secondary-color);
+    /* SteelBlue */
+}
+
+.tag-course {
+    background-color: var(--accent-color);
+    /* Orange */
+}
+
+.tag-attribute {
+    background-color: #6A5ACD;
+    /* SlateBlue */
+}
+
+.class-card h4 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 10px;
+}
+
+.class-card ul {
+    list-style-type: none;
+    margin: 15px 0;
+}
+
+.class-card li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.class-card li::before {
+    content: "✓";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Blocks */
+.detail-block {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+}
+
+.schedule-box,
+.example-box,
+.note-box {
+    background: #f4f6f7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 0.95em;
+}
+
+.schedule-box strong,
+.example-box strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.note-box.warning {
+    background: #fff3e0;
+    border: 1px solid #ffe0b2;
+}
+
+.note {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Point Box */
+.point-box {
+    background: #fff9e6;
+    border: 2px solid var(--accent-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.point-box strong {
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    border-bottom: 2px dashed var(--accent-color);
+    padding-bottom: 5px;
+}
+
+.point-box ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.point-box li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.point-box li::before {
+    content: "●";
+    /* Different bullet for point box if desired, or keep default checkmark but reset style? Parent .class-card li has checkmark. Let's inspect. */
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+    top: 2px;
+}
+
+/* Override .class-card li::before for point-box to avoid double bullets or wrong style if it inherits */
+.class-card .point-box li::before {
+    content: "●";
+    color: var(--accent-color);
+}
+
+/* Fee Info Block */
+.fee-info {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #c8e6c9;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.fee-info p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.fee-info .label {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.fee-info .price {
+    font-weight: bold;
+    color: #E74C3C;
+    font-size: 1.1rem;
+}
+
+/* Tables */
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: var(--secondary-color);
+    color: white;
+    white-space: nowrap;
+}
+
+.price-cell {
+    font-weight: bold;
+    color: #E74C3C;
+    text-align: right;
+    white-space: nowrap;
+}
+
+footer {
+    background-color: #34495E;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #BDC3C7;
+}
+
+/* New Course Badge */
+.new-course {
+    border: 3px solid var(--accent-color);
+    position: relative;
+    background-color: #fffaf0;
+}
+
+.new-badge {
+    background-color: #ff4500;
+    color: white;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 5px;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Image Grid Styles */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-color: #f0f0f0;
+    border: 2px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Explicit Grid Layouts for AAS */
+.image-grid.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.image-grid.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+    .image-grid.grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        /* 4 becomes 2 on tablet/mobile */
+    }
+
+    .image-grid.grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 stays 2 */
+    }
+}
+
+/* Gamerize Section Styles */
+.gamerize-logo {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 20px;
+}
+
+.gamerize-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.gamerize-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Comparison Table */
+.comparison-container {
+    overflow-x: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 3px solid #fff;
+    /* Thick white borders like screenshot */
+    padding: 10px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Header Colors */
+.comparison-table th {
+    color: #444;
+    font-weight: normal;
+}
+
+.comparison-table th:nth-child(2) {
+    background-color: #fff9c4;
+}
+
+/* Yellow */
+.comparison-table th:nth-child(3) {
+    background-color: #e0f7fa;
+}
+
+/* Cyan */
+.comparison-table th:nth-child(4) {
+    background-color: #fff9c4;
+}
+
+.comparison-table th:nth-child(5) {
+    background-color: #e0f7fa;
+}
+
+.comparison-table th:nth-child(6) {
+    background-color: #fff9c4;
+}
+
+.comparison-table th:nth-child(7) {
+    background-color: #e0f7fa;
+}
+
+.comparison-table th:nth-child(8) {
+    background-color: #fff9c4;
+}
+
+.comparison-table th:nth-child(9) {
+    background-color: #e0f7fa;
+}
+
+.comparison-table th:nth-child(10) {
+    background-color: #fff9c4;
+}
+
+
+/* Row Colors */
+.comparison-table .row-paper {
+    background-color: #e8f5e9;
+    /* Light Green */
+}
+
+.comparison-table .row-app {
+    background-color: #fbe9e7;
+    /* Light Orange */
+}
+
+.symbol-circle {
+    color: #555;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.symbol-double {
+    color: #d84315;
+    /* Burnt orange for double circle */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.row-label {
+    background-color: transparent !important;
+    text-align: center;
+    font-weight: bold;
+    border: none !important;
+
+    /* Portal Site Additions */
+
+    /* Global Navigation */
+    .global-nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .global-nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        padding: 5px 15px;
+        border-radius: 20px;
+        transition: background-color 0.3s;
+    }
+
+    .global-nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(70, 130, 180, 0.8)), url('https://placehold.co/1200x600/e0f7fa/2e8b57?text=Welcome+to+English+Access');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 20px;
+        text-align: center;
+        border-radius: 20px;
+        margin-bottom: 50px;
+        box-shadow: var(--shadow-md);
+    }
+
+    /* Use a solid color backup if image fails or for cleaner look */
+    .hero-section.simple {
+        background: linear-gradient(135deg, #2E8B57, #4682B4);
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 300;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.4;
+    }
+
+    /* Hidden Utility */
+    .hidden-section {
+        display: none !important;
+    }
+
+    /* Quick Access Grid tweaks */
+    .quick-access-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    .quick-card {
+        background: white;
+        padding: 40px 20px;
+        border-radius: 15px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--text-color);
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .quick-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--secondary-color);
+    }
+
+    .quick-card i {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+
+    margin: 0;
+}
+
+/* Support for Categorized Table */
+.category-header {
+    background-color: #fff9c4 !important;
+    /* Gentle yellow for categories */
+    color: var(--text-color);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    width: 150px;
+    border-right: 2px solid #ddd;
+}
+
+/* Enhanced Portal Styles */
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.quick-card {
+    background: white;
+    padding: 50px 30px;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* Softer, deeper shadow */
+    transition: all 0.3s ease;
+    border-top: 6px solid var(--secondary-color);
+    /* Match class guide */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-card:nth-child(2) {
+    border-top-color: var(--primary-color);
+}
+
+.quick-card:nth-child(3) {
+    border-top-color: var(--accent-color);
+}
+
+
+.quick-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.quick-card i {
+    font-size: 3.5rem;
+    color: inherit;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.quick-card:nth-child(1) i {
+    color: var(--secondary-color);
+}
+
+.quick-card:nth-child(2) i {
+    color: var(--primary-color);
+}
+
+.quick-card:nth-child(3) i {
+    color: var(--accent-color);
+}
+
+.quick-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #444;
+}
+
+.quick-card p {
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* Stylish Hero */
+.hero-section.simple {
+    background: linear-gradient(120deg, var(--secondary-color), var(--primary-color));
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section.simple::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9InB1cmUiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+');
+    /* Simple dot pattern */
+    opacity: 0.3;
+}
