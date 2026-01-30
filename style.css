@@ -1,14 +1,14 @@
 :root {
-    --primary-color: #FFB300;
-    /* Golden Yellow */
-    --secondary-color: #FF7043;
-    /* Warm Orange */
-    --accent-color: #FF5252;
-    /* Warm Red/Coral */
-    --text-color: #443300;
-    /* Darker warm brown for text */
-    --bg-color: #FFFEF5;
-    /* Soft Cream */
+    --primary-color: #FBBF24;
+    /* Amber 400 - Soft Yellow */
+    --secondary-color: #FB923C;
+    /* Orange 400 - Soft Orange */
+    --accent-color: #FCA5A5;
+    /* Red 300 - Soft Coral */
+    --text-color: #57534E;
+    /* Stone 600 - Muted Brown-Gray */
+    --bg-color: #FFFBEB;
+    /* Amber 50 - Soft Cream */
     --card-bg: #FFFFFF;
     --font-main: "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
     --font-heading: "Montserrat", sans-serif;
