@@ -51,6 +51,49 @@
             border-radius: 8px;
         }
 
+        .calendar-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .calendar-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .calendar-image-wrapper {
+            text-align: center;
+        }
+
+        .calendar-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .pdf-link:hover {
+            background: #1e6b3d;
+        }
+
         .placeholder-calendar {
             display: flex;
             flex-direction: column;
@@ -146,47 +189,51 @@
         <!-- Calendar Section -->
         <section class="calendar-section">
 
-            <!-- Notice -->
-            <div class="calendar-notice">
-                <h3><i class="fas fa-info-circle"></i> お知らせ</h3>
-                <p>スクールカレンダーは現在準備中です。Googleカレンダーの埋め込みにより、リアルタイムでスケジュールを確認できるようになります。</p>
-            </div>
-
-            <!-- Calendar Container -->
+            <!-- ENGLISH ACCESS (大人・中高生) カレンダー -->
             <div class="calendar-container">
-                <!-- Placeholder: Replace with actual Google Calendar embed -->
-                <div class="placeholder-calendar">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>カレンダー準備中</h3>
-                    <p>近日中に、レッスンスケジュールやイベント情報を確認できるようになります。</p>
-                </div>
+                <h3 class="calendar-title"><i class="fas fa-user-graduate"></i> ENGLISH ACCESS カレンダー</h3>
+                <p class="calendar-subtitle">大人・中高生コース向け</p>
 
-                <!-- 
-                    Google Calendar Embed Example:
-                    <iframe class="calendar-embed"
-                        src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=Asia%2FTokyo"
-                        frameborder="0" scrolling="no"></iframe>
-                -->
+                <!-- カレンダー画像をここに配置 -->
+                <div class="calendar-image-wrapper">
+                    <!-- 
+                        画像を設置する場合:
+                        <img src="img/calendar-ea.png" alt="ENGLISH ACCESS 2026年度カレンダー" class="calendar-image">
+                        
+                        PDFリンクを設置する場合:
+                        <a href="assets/calendar-ea.pdf" target="_blank" class="pdf-link">
+                            <i class="fas fa-file-pdf"></i> PDFでカレンダーを開く
+                        </a>
+                    -->
+                    <div class="placeholder-calendar">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>準備中</h3>
+                        <p>カレンダー画像がここに表示されます</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Legend -->
-            <h3 style="margin-bottom: 20px; color: var(--primary-color);">カレンダーの見方</h3>
-            <div class="calendar-legend">
-                <div class="legend-item">
-                    <div class="legend-color holiday"></div>
-                    <span>休校日</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color event"></div>
-                    <span>イベント・発表会</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color special"></div>
-                    <span>体験レッスン日</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color closed"></div>
-                    <span>臨時休校</span>
+            <!-- EA Kids (幼児・小学生) カレンダー -->
+            <div class="calendar-container">
+                <h3 class="calendar-title"><i class="fas fa-child"></i> EA Kids カレンダー</h3>
+                <p class="calendar-subtitle">幼児・小学生コース向け</p>
+
+                <!-- カレンダー画像をここに配置 -->
+                <div class="calendar-image-wrapper">
+                    <!-- 
+                        画像を設置する場合:
+                        <img src="img/calendar-eakids.png" alt="EA Kids 2026年度カレンダー" class="calendar-image">
+                        
+                        PDFリンクを設置する場合:
+                        <a href="assets/calendar-eakids.pdf" target="_blank" class="pdf-link">
+                            <i class="fas fa-file-pdf"></i> PDFでカレンダーを開く
+                        </a>
+                    -->
+                    <div class="placeholder-calendar">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>準備中</h3>
+                        <p>カレンダー画像がここに表示されます</p>
+                    </div>
                 </div>
             </div>
 
