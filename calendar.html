@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>スクールカレンダー | ENGLISH ACCESS/EA Kids</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .calendar-section {
+            padding: 40px 0;
+        }
+
+        .calendar-notice {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .calendar-notice h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .calendar-notice p {
+            color: #666;
+            margin: 0;
+        }
+
+        .calendar-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .calendar-embed {
+            width: 100%;
+            min-height: 600px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .placeholder-calendar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 8px;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .placeholder-calendar i {
+            font-size: 4rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .placeholder-calendar h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .placeholder-calendar p {
+            color: #666;
+            max-width: 400px;
+        }
+
+        .calendar-legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .legend-color.holiday {
+            background: #e74c3c;
+        }
+
+        .legend-color.event {
+            background: var(--secondary-color);
+        }
+
+        .legend-color.special {
+            background: var(--accent-color);
+        }
+
+        .legend-color.closed {
+            background: #95a5a6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>ENGLISH ACCESS / EA Kids</h1>
+            <!-- Global Navigation -->
+            <nav class="global-nav">
+                <a href="index.html">ホーム</a>
+                <a href="2026-class-guide.html">クラス案内</a>
+                <a href="material-fees.html">教材費</a>
+                <a href="calendar.html" class="active">カレンダー</a>
+                <a href="forms.html">届書提出</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Page Title -->
+        <section class="hero-section simple">
+            <h2 class="hero-title">スクールカレンダー</h2>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="calendar-section">
+
+            <!-- Notice -->
+            <div class="calendar-notice">
+                <h3><i class="fas fa-info-circle"></i> お知らせ</h3>
+                <p>スクールカレンダーは現在準備中です。Googleカレンダーの埋め込みにより、リアルタイムでスケジュールを確認できるようになります。</p>
+            </div>
+
+            <!-- Calendar Container -->
+            <div class="calendar-container">
+                <!-- Placeholder: Replace with actual Google Calendar embed -->
+                <div class="placeholder-calendar">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>カレンダー準備中</h3>
+                    <p>近日中に、レッスンスケジュールやイベント情報を確認できるようになります。</p>
+                </div>
+
+                <!-- 
+                    Google Calendar Embed Example:
+                    <iframe class="calendar-embed"
+                        src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=Asia%2FTokyo"
+                        frameborder="0" scrolling="no"></iframe>
+                -->
+            </div>
+
+            <!-- Legend -->
+            <h3 style="margin-bottom: 20px; color: var(--primary-color);">カレンダーの見方</h3>
+            <div class="calendar-legend">
+                <div class="legend-item">
+                    <div class="legend-color holiday"></div>
+                    <span>休校日</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color event"></div>
+                    <span>イベント・発表会</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color special"></div>
+                    <span>体験レッスン日</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color closed"></div>
+                    <span>臨時休校</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Back to Home -->
+        <div class="navigation-buttons" style="padding: 30px 0;">
+            <a href="index.html" class="btn-back"><i class="fas fa-home"></i> ホームに戻る</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ENGLISH ACCESS/EA Kids</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+</CodeContent>
+<parameter name="EmptyFile">false
