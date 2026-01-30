@@ -46,24 +46,13 @@ header {
     margin-bottom: 40px;
 }
 
-.header-logo {
-    max-width: 320px;
-    width: 60%;
-    height: auto;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-@media (max-width: 600px) {
-    .header-logo {
-        max-width: 240px;
-        width: 80%;
-    }
-}
-
 header h1 {
-    display: none;
-    /* Hide text H1 when using image logo */
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 
