@@ -56,7 +56,62 @@ header h1 {
 }
 
 
-/* Tabs */
+/* Document & Form Lists */
+.doc-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.doc-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-decoration: none;
+    /* For direct links */
+    color: inherit;
+}
+
+.doc-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.doc-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.doc-info {
+    flex: 1;
+}
+
+.doc-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.doc-desc {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.lock-icon {
+    color: #ccc;
+    font-size: 1rem;
+}
+
 .tab-container {
     display: flex;
     justify-content: center;
