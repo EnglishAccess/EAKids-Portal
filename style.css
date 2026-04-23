@@ -877,17 +877,38 @@ footer p {
 
     /* Header */
     header {
-        padding: 30px 15px;
+        padding: 25px 15px;
         border-bottom-left-radius: 30% 15px;
         border-bottom-right-radius: 30% 15px;
         margin-bottom: 20px;
     }
 
-    header h1 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
+    .header-inner {
+        flex-wrap: wrap;
     }
 
+    .header-logo {
+        position: static;
+        transform: none;
+        max-height: 55px;
+        margin: 0 15px;
+    }
+
+    .header-logo-left {
+        order: 1;
+    }
+
+    .header-logo-right {
+        order: 2;
+    }
+
+    header h1 {
+        font-size: 1.35rem;
+        width: 100%;
+        order: 3;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
     /* Navigation */
     .global-nav {
         gap: 6px;
