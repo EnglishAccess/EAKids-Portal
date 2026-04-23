@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>ご入会書類 | ENGLISH ACCESS/EA Kids</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #f1f5f9;
+            color: #475569;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .back-btn:hover {
+            background: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <img src="assets/images/logo/EA logo.png" alt="ENGLISH ACCESS" class="header-logo header-logo-left">
+                <h1>ご入会書類（各種コース）</h1>
+                <img src="assets/images/logo/EAKIDS_logo -transparent.png" alt="EA Kids" class="header-logo header-logo-right">
+            </div>
+            <!-- ナビゲーションなし -->
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2 style="text-align: center; border: none; margin-bottom: 10px;">
+                <i class="fas fa-folder-open"></i> 管理者用ご入会書類一覧
+            </h2>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">
+                以下のボタンから各コースのご入会書類（PDF）を閲覧・ダウンロードできます。
+            </p>
+
+            <div class="doc-list">
+                <div class="doc-card" onclick="downloadDoc('preschool_rules.pdf')">
+                    <i class="fas fa-file-pdf doc-icon"></i>
+                    <div class="doc-info">
+                        <div class="doc-title">プリスクールコースご入会書類</div>
+                        <div class="doc-desc">PDF 閲覧</div>
+                    </div>
+                </div>
+
+                <div class="doc-card" onclick="downloadDoc('afterschool_rules.pdf')">
+                    <i class="fas fa-file-pdf doc-icon"></i>
+                    <div class="doc-info">
+                        <div class="doc-title">アフタースクールコースご入会書類</div>
+                        <div class="doc-desc">PDF 閲覧</div>
+                    </div>
+                </div>
+
+                <div class="doc-card" onclick="downloadDoc('gakudo_rules.pdf')">
+                    <i class="fas fa-file-pdf doc-icon"></i>
+                    <div class="doc-info">
+                        <div class="doc-title">ガクドウコースご入会書類</div>
+                        <div class="doc-desc">PDF 閲覧</div>
+                    </div>
+                </div>
+
+                <div class="doc-card" onclick="downloadDoc('saturday_k1-k3_rules.pdf')">
+                    <i class="fas fa-file-pdf doc-icon"></i>
+                    <div class="doc-info">
+                        <div class="doc-title">サタデーコースK1-K3クラスご入会書類</div>
+                        <div class="doc-desc">（3歳～年長）</div>
+                    </div>
+                </div>
+
+                <div class="doc-card" onclick="downloadDoc('saturday_elementary_rules.pdf')">
+                    <i class="fas fa-file-pdf doc-icon"></i>
+                    <div class="doc-info">
+                        <div class="doc-title">サタデーコースご入会書類</div>
+                        <div class="doc-desc">（小学生）</div>
+                    </div>
+                </div>
+
+                <div class="doc-card" onclick="downloadDoc('45min_kids_rules.pdf')">
+                    <i class="fas fa-file-pdf doc-icon"></i>
+                    <div class="doc-info">
+                        <div class="doc-title">45分クラスご入会書類</div>
+                        <div class="doc-desc">（幼稚園・小学生）</div>
+                    </div>
+                </div>
+
+                <div class="doc-card" onclick="downloadDoc('45min_teens_adults_rules.pdf')">
+                    <i class="fas fa-file-pdf doc-icon"></i>
+                    <div class="doc-info">
+                        <div class="doc-title">45分クラスご入会書類</div>
+                        <div class="doc-desc">（中高生・大人）</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="documents.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> 規約等書類ページへ戻る
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ENGLISH ACCESS/EA Kids</p>
+        </div>
+    </footer>
+
+    <script>
+        function downloadDoc(filename) {
+            window.open(filename, '_blank');
+        }
+    </script>
+</body>
+</html>

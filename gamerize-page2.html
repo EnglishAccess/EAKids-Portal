@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>ゲーマライズ辞書 初めての方へ | ENGLISH ACCESS/EA Kids</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ヘッダー上書き: ネイビー */
+        header {
+            background: linear-gradient(135deg, #1a3d6e, #1b6fa8);
+            padding: 20px 20px 30px;
+        }
+
+        .gm-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto 20px;
+            padding: 0 10px;
+        }
+
+        .gm-header-bar .logo-eakids {
+            height: 48px;
+        }
+
+        .gm-header-bar .logo-gamerize-wrap {
+            background: #fff;
+            border-radius: 16px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .gm-header-bar .logo-gamerize-wrap img {
+            height: 120px;
+            display: block;
+        }
+
+        /* サブナビ */
+        .gm-subnav {
+            background: #12305a;
+            padding: 0;
+            text-align: center;
+        }
+
+        .gm-subnav a {
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 12px 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .gm-subnav a:hover,
+        .gm-subnav a.active {
+            color: #F5C800;
+            border-bottom-color: #F5C800;
+        }
+
+        /* ============================================================
+           メインコンテンツ: 1枚のクリーム色カード内にまとめる
+           ============================================================ */
+        .gm-body {
+            background: #fffbeb;
+            /* クリーム */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 星デコ */
+        .star {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .star-tl {
+            top: -30px;
+            left: -30px;
+            width: 140px;
+            height: 140px;
+            opacity: 0.9;
+        }
+
+        .star-br {
+            bottom: -20px;
+            right: -20px;
+            width: 200px;
+            height: 200px;
+            opacity: 0.8;
+        }
+
+        .star-mr {
+            top: 45%;
+            right: -40px;
+            width: 160px;
+            height: 160px;
+            opacity: 0.6;
+        }
+
+        .gm-content {
+            position: relative;
+            z-index: 1;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 50px 30px 60px;
+        }
+
+        .guide-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .guide-section {
+            margin-bottom: 34px;
+        }
+
+        .guide-section h3 {
+            color: #1b6fa8;
+            font-size: 1.35rem;
+            font-weight: 700;
+            border-bottom: 2px solid #72c5d4;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+
+        .guide-section p,
+        .guide-section li {
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .guide-list {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .chapter-title {
+            margin: 36px 0 18px;
+            padding: 10px 14px;
+            background: #eef6ff;
+            border-left: 6px solid #1b6fa8;
+            border-radius: 10px;
+            color: #1a3d6e;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .welcome-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .welcome-logo {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            padding: 4px;
+            flex-shrink: 0;
+        }
+
+        .important-box {
+            background: #fff3e0;
+            border: 1px solid #ffd08a;
+            border-left: 5px solid #f39c12;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-top: 14px;
+            font-weight: 700;
+            color: #7d4e00;
+        }
+
+        .encourage-box {
+            background: #e8f6ef;
+            border: 1px solid #b9e7cf;
+            border-left: 5px solid #27ae60;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-top: 14px;
+            color: #1f5f3d;
+            font-weight: 700;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 30px;
+            border-radius: 14px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            font-size: 1.15rem;
+            min-width: 220px;
+            justify-content: center;
+        }
+
+        .store-btn.apple {
+            background: #111;
+        }
+
+        .store-btn.google {
+            background: #2d2d2d;
+        }
+
+        .image-placeholder-box {
+            margin-top: 14px;
+            border: 2px dashed #aac8e8;
+            border-radius: 12px;
+            min-height: 180px;
+            background: #f7fbff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #5f7fa1;
+            font-weight: 700;
+            padding: 16px;
+        }
+
+        .image-placeholder-box.filled {
+            border: 1px solid #d6e6f7;
+            background: #fff;
+            display: block;
+            min-height: 0;
+            padding: 8px;
+        }
+
+        .guide-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .section-separator {
+            border-top: 2px dashed #c8dbef;
+            margin: 14px 0;
+        }
+
+        .mini-game-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 18px 0 10px;
+            color: #1a3d6e;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .mini-game-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 82px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: #1b6fa8;
+            color: #fff;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+        }
+
+        .image-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(180px, 1fr));
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .qr-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .qr-card {
+            border: 2px dashed #c2d9f2;
+            border-radius: 12px;
+            background: #f8fbff;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .qr-label {
+            display: block;
+            color: #1a3d6e;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .qr-box {
+            width: 100%;
+            max-width: 180px;
+            margin: 0 auto;
+            aspect-ratio: 1 / 1;
+            border: 2px dashed #aac8e8;
+            border-radius: 10px;
+            background: #fff;
+            color: #5f7fa1;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .next-guide-link {
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .next-guide-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #1a3d6e;
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 26px;
+            border-radius: 999px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 640px) {
+            .gm-header-bar .logo-gamerize-wrap img {
+                height: 80px;
+            }
+
+            .guide-card {
+                padding: 34px 20px;
+            }
+
+            .store-btn {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .qr-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-row {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-logo {
+                width: 48px;
+                height: 48px;
+            }
+        }
+    </style>
+    <script>
+        // Password protection for this page (Prompt every time)
+        document.documentElement.style.display = 'none'; // Hide content while prompting
+        let pwd = prompt('このページの閲覧にはパスワードが必要です。');
+        if (pwd === 'eakids123') {
+            document.documentElement.style.display = ''; // Show content
+        } else {
+            alert('パスワードが間違っています。ホームページに戻ります。');
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="gm-header-bar">
+            <img src="img/favicon.png" alt="EA Kids" class="logo-eakids">
+            <div class="logo-gamerize-wrap">
+                <img src="img/The Gamerize Dictionary Logo 透過.png" alt="The Gamerize Dictionary">
+            </div>
+            <div style="width:48px;"></div>
+        </div>
+        <nav class="global-nav">
+            <a href="index.html">ホーム</a>
+            <a href="2026-class-guide.html">クラス案内</a>
+            <a href="material-fees.html">教材費</a>
+            <a href="calendar.html">カレンダー</a>
+            <a href="clil-songs.html">CLILソング</a>
+            <a href="documents.html">規約等書類</a>
+            <a href="forms.html">届書提出</a>
+            <a href="gakudo.html">ガクドウ</a>
+            <a href="gamerize-dictionary.html" class="active">ゲーマライズ辞書</a>
+        </nav>
+    </header>
+
+    <nav class="gm-subnav">
+        <a href="gamerize-dictionary.html">ホーム</a>
+        <a href="gamerize-page2.html" class="active">初めての方へ</a>
+        <a href="gamerize-page3.html">ページ3</a>
+        <a href="gamerize-page4.html">ページ4</a>
+    </nav>
+
+    <!-- メインボディ: クリーム色 + 星デコ -->
+    <div class="gm-body">
+
+        <!-- 星デコ -->
+        <div class="star star-tl">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#F5C800" />
+            </svg>
+        </div>
+        <div class="star star-mr">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#F5C800" />
+            </svg>
+        </div>
+        <div class="star star-br">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#F5C800" />
+            </svg>
+        </div>
+
+        <div class="gm-content">
+            <div class="guide-card">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h2 style="color: #1a3d6e; font-family: 'Montserrat', 'Noto Sans JP', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; border: none;">
+                        初めての方へ
+                    </h2>
+                    <p style="color: #555; font-size: 1.05rem; font-weight: 600;">The Gamerize Dictionary はじめてガイド</p>
+                </div>
+
+                <section class="guide-section">
+                    <h3 class="welcome-head"><img src="参考画像/Gamerize page/Gamerize logo.png" alt="Gamerizeロゴ" class="welcome-logo">「ゲーマライズ辞書」にようこそ！</h3>
+                    <p>このページでは、初めての方向けに最初のステップをご紹介します。</p>
+                    <p>宿題が配信されたり、クラスを楽しんで受けていただくためにもとっても重要なアプリなので、ぜひお子様と一緒に最後までプレイしてくださいね。（所要時間は15分程度です）</p>
+                </section>
+
+                <h4 class="chapter-title">導入編</h4>
+                <section class="guide-section">
+                    <h3>① ゲーマライズ辞書とは？</h3>
+                    <p>メイン紹介動画と軽い説明をここでご案内します。</p>
+                    <div class="image-placeholder-box" style="padding: 0; overflow: hidden;">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jh14-7Eobow?si=eFVQJUpyKxMzWvay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; min-height: 260px; border: 0;"></iframe>
+                    </div>
+                    <ul class="guide-list">
+                        <li>子どもたちが楽しみながら英語を学べるよう、モチベーションとゲーミフィケーション理論に基づいて構築されたアプリです。</li>
+                        <li>翻訳・イメージ・例文・音声が入った辞書機能があり、暗記だけでなくゲーム感覚で基礎を学べます。</li>
+                        <li>ポイント（コイン）を貯めると、王国づくりやアバター着せ替えができ、自分から「やりたい！」と思える仕組みです。</li>
+                        <li>AIと間隔反復システムが、学習内容の定着をサポートします。</li>
+                    </ul>
+                    <div class="important-box">重要: コミュニケーションクラス・フォニックスクラス・ガクドウクラスの宿題は、ゲーマライズ辞書から出ます。</div>
+                </section>
+
+                <section class="guide-section">
+                    <h3>② ダウンロードの案内</h3>
+                    <p>まずはアプリをダウンロードしましょう。</p>
+                    <div class="qr-grid" style="gap: 30px; margin-top: 24px;">
+                        <div class="qr-card" style="border: none; background: transparent; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+                            <a href="https://apps.apple.com/jp/app/id1552222556" target="_blank" class="store-btn apple" style="margin-bottom: 20px; width: 100%; min-width: 0; max-width: 220px;"><i class="fab fa-apple"></i> iOS</a>
+                            <div class="qr-box" style="border: none; padding: 0; background: transparent;">
+                                <img src="assets/images/logo/gamerize ios.png" alt="iOS QR" style="width: 100%; max-width: 200px; height: auto; display: block; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                        <div class="qr-card" style="border: none; background: transparent; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+                            <a href="https://play.google.com/store/apps/details?id=app.gamerize.gamerize&pcampaignid=web_share" target="_blank" class="store-btn google" style="margin-bottom: 20px; width: 100%; min-width: 0; max-width: 220px;"><i class="fab fa-google-play"></i> Google Play</a>
+                            <div class="qr-box" style="border: none; padding: 0; background: transparent;">
+                                <img src="assets/images/logo/gamerize GP.png" alt="Google Play QR" style="width: 100%; max-width: 200px; height: auto; display: block; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="guide-section">
+                    <h3>③ ログインの仕方</h3>
+                    <p>ログイン画面の画像を確認しながら進めます。</p>
+                    <div class="image-row">
+                        <div class="image-placeholder-box filled">
+                            <img src="参考画像/Gamerize page/ログイン画面①.jpg" alt="ログイン画面1" class="guide-image">
+                        </div>
+                        <div class="image-placeholder-box filled">
+                            <img src="参考画像/Gamerize page/ログイン画面②.jpg" alt="ログイン画面2" class="guide-image">
+                        </div>
+                    </div>
+                    <div class="important-box">注意: 新規登録はしないでください。必ず「ログイン」ボタンを押し、別紙のIDとパスワードでログインしてください。</div>
+                </section>
+
+                <h4 class="chapter-title">プレイ編</h4>
+                <section class="guide-section">
+                    <h3>④ 最初のチュートリアルの説明</h3>
+                    <p>王国画面が開いたら最初のチュートリアルが始まります。王様が挨拶していますね。</p>
+                    <div class="section-separator"></div>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/チュートリアル①.jpg" alt="チュートリアル1" class="guide-image">
+                    </div>
+                    <p>Hello! 王様!</p>
+
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/チュートリアル②.jpg" alt="チュートリアル2" class="guide-image">
+                    </div>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/チュートリアル③.jpg" alt="チュートリアル3" class="guide-image">
+                    </div>
+                    <p>ああ！王国がモンスターに壊されてしまいました！</p>
+
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/チュートリアル④.jpg" alt="チュートリアル4" class="guide-image">
+                    </div>
+                    <p>王様を手伝って、王国を復興しましょう！</p>
+
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/チュートリアル⑤.jpg" alt="チュートリアル5" class="guide-image">
+                    </div>
+                    <p>王様の指示に従って、まずは画面左下の「マップボタン」から、「アドベンチャーメニュー」に進みましょう。</p>
+
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アドベンチャーメニュー①.jpg" alt="アドベンチャーメニュー1" class="guide-image">
+                    </div>
+                    <p>これがアドベンチャーメニューです！<br>宿題が配信されたり、好きな英語セットを選んで勉強することができます。</p>
+
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アドベンチャーメニュー②.jpg" alt="アドベンチャーメニュー2" class="guide-image">
+                    </div>
+                    <p>最初は王様がチュートリアル用の「バンドル（英語のセット）」を選んでくれます。</p>
+
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アドベンチャーメニュー③.jpg" alt="アドベンチャーメニュー3" class="guide-image">
+                    </div>
+                    <p>その中から、好きなアドベンチャーを選んでみよう！Goの矢印ボタンで、選べるよ！</p>
+
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アドベンチャーメニュー④.jpg" alt="アドベンチャーメニュー4" class="guide-image">
+                    </div>
+                    <p>「たんごを言う」（かんたん）「文を言う」（むずかしい）のどちらかを選ぼう。</p>
+
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アドベンチャーマップ①.jpg" alt="アドベンチャーマップ1" class="guide-image">
+                    </div>
+                    <p>これがアドベンチャーマップです！</p>
+
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アドベンチャーマップ③.jpg" alt="アドベンチャーマップ3" class="guide-image">
+                    </div>
+                    <p>まずは画面右下のテントアイコンを押しましょう！</p>
+                </section>
+
+                <section class="guide-section">
+                    <h3>⑤ テントの説明</h3>
+                    <p>テントでは、アドベンチャーで学ぶ単語を先に学習できます。単語カードのスピーカーで発音を聞き、カードタップで単語/文章を切り替えて単語を覚えましょう。</p>
+                    <p>イラストと単語の組み合わせを覚えたら、矢印ボタンでアドベンチャーマップに戻りましょう。</p>
+                    <div class="image-row">
+                        <div class="image-placeholder-box filled">
+                            <img src="参考画像/Gamerize page/テント内①.jpg" alt="テント内1" class="guide-image">
+                        </div>
+                        <div class="image-placeholder-box filled">
+                            <img src="参考画像/Gamerize page/テント内②.jpg" alt="テント内2" class="guide-image">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="guide-section">
+                    <h3>⑥ アドベンチャーマップ</h3>
+                    <p>アバターのいる旗を押して、1つ目のゲームを始めましょう。</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アドベンチャーマップ②.jpg" alt="アドベンチャーマップ" class="guide-image">
+                    </div>
+                </section>
+
+                <section class="guide-section">
+                    <h3>⑦ 4つのゲームの説明</h3>
+                    <p>ひとつのアドベンチャーの中には、4つのゲームがあります。</p>
+
+                    <p class="mini-game-title"><span class="mini-game-number">Game 01</span>スラッシャーゲーム</p>
+                    <div class="image-row">
+                        <div class="image-placeholder-box filled">
+                            <img src="参考画像/Gamerize page/スラッシャーゲーム①.png" alt="スラッシャーゲーム1" class="guide-image">
+                        </div>
+                        <div class="image-placeholder-box filled">
+                            <img src="参考画像/Gamerize page/スラッシャーゲーム②.png" alt="スラッシャーゲーム2" class="guide-image">
+                        </div>
+                    </div>
+                    <p>スピーカーを押して、聞こえた英語のイラストをタップしよう！</p>
+                    <div class="section-separator"></div>
+
+                    <p class="mini-game-title"><span class="mini-game-number">Game 02</span>アーチェリー</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アーチェリーゲーム①.png" alt="アーチェリーゲーム1" class="guide-image">
+                    </div>
+                    <p>左下のイラストをヒントに、的をタップ！</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アーチェリーゲーム②.png" alt="アーチェリーゲーム2" class="guide-image">
+                    </div>
+                    <p>弓を長押しして、的の中心にマークが来たら…</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アーチェリーゲーム③.png" alt="アーチェリーゲーム3" class="guide-image">
+                    </div>
+                    <p>指を離して弓を放とう！</p>
+                    <div class="section-separator"></div>
+
+                    <p class="mini-game-title"><span class="mini-game-number">Game 03</span>橋渡りゲーム</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/橋渡ゲーム①.png" alt="橋渡りゲーム1" class="guide-image">
+                    </div>
+                    <p>イラストを見てマイクボタンを押して・・・</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/橋渡ゲーム②.png" alt="橋渡りゲーム2" class="guide-image">
+                    </div>
+                    <p>この画面の間に喋ろう！</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/橋渡ゲーム③.png" alt="橋渡りゲーム3" class="guide-image">
+                    </div>
+                    <p>成功すると前に進めるよ！</p>
+                    <div class="section-separator"></div>
+
+                    <p class="mini-game-title"><span class="mini-game-number">Game 04</span>バトルゲーム</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/バトルゲーム①.png" alt="バトルゲーム1" class="guide-image">
+                    </div>
+                    <p>イラストを見て、マイクボタンを押しながら喋ってみよう！</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/バトルゲーム②.png" alt="バトルゲーム2" class="guide-image">
+                    </div>
+                    <p>成功したら攻撃のチャンス！</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/バトルゲーム③.png" alt="バトルゲーム3" class="guide-image">
+                    </div>
+                    <p>カードを選んで敵を倒そう！</p>
+
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/ゲーム終了.jpg" alt="ゲーム終了" class="guide-image">
+                    </div>
+                    <p>バトルが終わったら、アドベンチャーはクリアです！お疲れ様でした！</p>
+                </section>
+
+                <section class="guide-section">
+                    <h3>⑧ アドベンチャー終了後の流れ</h3>
+                    <p>アドベンチャー終了後は王国画面に戻ります。</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アドベンチャー終了後⓪.jpg" alt="アドベンチャー終了後0" class="guide-image">
+                    </div>
+                    <p>王様の案内に沿って、右下の建設アイコンからお城と小屋を作り直しましょう。</p>
+                    <div class="image-row">
+                        <div class="image-placeholder-box filled">
+                            <img src="参考画像/Gamerize page/アドベンチャー終了後①.jpg" alt="アドベンチャー終了後1" class="guide-image">
+                        </div>
+                        <div class="image-placeholder-box filled">
+                            <img src="参考画像/Gamerize page/アドベンチャー終了後②.jpg" alt="アドベンチャー終了後2" class="guide-image">
+                        </div>
+                        <div class="image-placeholder-box filled">
+                            <img src="参考画像/Gamerize page/アドベンチャー終了後③.jpg" alt="アドベンチャー終了後3" class="guide-image">
+                        </div>
+                        <div class="image-placeholder-box filled">
+                            <img src="参考画像/Gamerize page/アドベンチャー終了後④.jpg" alt="アドベンチャー終了後4" class="guide-image">
+                        </div>
+                    </div>
+                    <p>お城と小屋が完成しました！</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アドベンチャー終了後⑤.jpg" alt="アドベンチャー終了後5" class="guide-image">
+                    </div>
+                    <p>もっと王国を発展させるために、さらなるアドベンチャーに出かけましょう！</p>
+                </section>
+
+                <h4 class="chapter-title">活用編</h4>
+                <section class="guide-section">
+                    <h3>⑨ 宿題のやり方（とっても重要！）</h3>
+                    <p>ここからは普段の宿題の取り組み方をご案内します。</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/アドベンチャーメニュー行き方.JPG" alt="アドベンチャーメニュー行き方" class="guide-image">
+                    </div>
+                    <p>再び左下のマップアイコンをタップして、アドベンチャーメニューに行きましょう。</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/引き止め.jpg" alt="引き止め画面" class="guide-image">
+                    </div>
+                    <p>モンスターが襲ってきている場合でも、まずは一旦無視して「はい」をタップ。先にアドベンチャーメニューへの行き方を確認しましょう。</p>
+                </section>
+
+                <section class="guide-section" style="margin-bottom: 10px;">
+                    <h3>⑩ アドベンチャーメニューの見方</h3>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/せんせいからのアドベンチャー.jpg" alt="せんせいからのアドベンチャー" class="guide-image">
+                    </div>
+                    <p>アドベンチャーメニューの一番左のアイコンでは「せんせいからのアドベンチャー」を確認できます。</p>
+                    <p style="font-size: 1.25rem; font-weight: 800; color: #1a3d6e;">「せんせいからのアドベンチャー」とは、ズバリ！毎週配信される宿題です！</p>
+                    <p>ゲーマライズの宿題は、次の授業内容の「予習」になっています。レッスンで使う単語をあらかじめ学んでおくことで、より楽しく、より効率的に授業を受けることができます！</p>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/クローズアップ.png" alt="アドベンチャーのクローズアップ" class="guide-image">
+                    </div>
+                    <p>少しアドベンチャーを見てみましょう。</p>
+                    <p>こちらのアドベンチャーは、コミュニケーションクラス（AAS2）の宿題です。3/3-3/9の授業内容となっているので、次回のレッスンが3/6にある場合は、こちらのアドベンチャーが宿題となります。</p>
+                    <p>授業内容にAとBがある場合、違う単語を扱っていたり、それぞれで単語と文章を扱っていたりします。どちらも取り組むようにしてください。</p>
+                    <div class="important-box">メモ: 進行中アドベンチャーの保存/リセットに関する注意文は、画像準備後に最終文言を追記予定です。</div>
+                </section>
+
+                <section class="guide-section" style="margin-bottom: 0;">
+                    <h3>ガイド終了</h3>
+                    <div class="image-placeholder-box filled" style="max-width: 360px; margin-left: auto; margin-right: auto;">
+                        <img src="参考画像/Gamerize page/Gamerize logo.png" alt="Gamerizeロゴ" class="guide-image">
+                    </div>
+                    <p style="font-weight: 800; color: #1a3d6e;">お疲れ様でした！<br>以上で初めての方向けのガイドは終了です！</p>
+                    <p>ゲーマライズ辞書に取り組むことで、楽しいからやる！やるからわかる！わかるから楽しい！のいい循環を生み出すことができます。</p>
+                    <p>生徒様に継続的に取り組んでいただくために、王国づくりやアバターの着せ替え、ペットの成長など、さまざまな工夫がありますので、次ページでご紹介しますね！</p>
+                    <div class="next-guide-link">
+                        <a href="gamerize-page3.html"><i class="fas fa-arrow-right"></i> 次のページへ進む</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ENGLISH ACCESS/EA Kids</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

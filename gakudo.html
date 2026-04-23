@@ -9,23 +9,39 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        // Password protection for this page (Prompt every time)
+        document.documentElement.style.display = 'none'; // Hide content while prompting
+        let pwd = prompt('このページの閲覧にはパスワードが必要です。');
+        if (pwd === 'eakids123') {
+            document.documentElement.style.display = ''; // Show content
+        } else {
+            alert('パスワードが間違っています。ホームページに戻ります。');
+            window.location.href = 'index.html';
+        }
+    </script>
 </head>
 
 <body>
 
     <header>
         <div class="container">
-            <h1>ガクドウ</h1>
+            <div class="header-inner">
+                <img src="assets/images/logo/EA logo.png" alt="ENGLISH ACCESS" class="header-logo header-logo-left">
+                <h1>ガクドウ</h1>
+                <img src="assets/images/logo/EAKIDS_logo -transparent.png" alt="EA Kids" class="header-logo header-logo-right">
+            </div>
             <!-- Global Navigation -->
             <nav class="global-nav">
                 <a href="index.html">ホーム</a>
                 <a href="2026-class-guide.html">クラス案内</a>
                 <a href="material-fees.html">教材費</a>
                 <a href="calendar.html">カレンダー</a>
-                <a href="clil-songs.html">CLIL<br>ソング</a>
+                <a href="clil-songs.html">CLILソング</a>
                 <a href="documents.html">規約等書類</a>
                 <a href="forms.html">届書提出</a>
                 <a href="gakudo.html" class="active">ガクドウ</a>
+                <a href="gamerize-dictionary.html">ゲーマライズ辞書</a>
             </nav>
         </div>
     </header>
@@ -35,22 +51,34 @@
             <h2><i class="fas fa-child"></i> ガクドウ</h2>
 
             <div class="quick-access-grid">
-                <a href="#" class="quick-card" onclick="alert('工事中'); return false;">
-                    <i class="fas fa-tools"></i>
-                    <h3>ボタン1</h3>
-                    <p>工事中</p>
+                <a href="assets/images/GKD/rules_gakudo.pdf" target="_blank" class="quick-card">
+                    <i class="fas fa-file-pdf" style="color: #e74c3c;"></i>
+                    <h3 style="font-size: 1.1rem;">ガクドウの決まり</h3>
+                    <p>PDFを開く</p>
                 </a>
                 
-                <a href="#" class="quick-card" onclick="alert('工事中'); return false;">
-                    <i class="fas fa-tools"></i>
-                    <h3>ボタン2</h3>
-                    <p>工事中</p>
+                <a href="https://sites.google.com/view/eakids-clil-topic-k-song/%E3%83%9B%E3%83%BC%E3%83%A0/clil%E3%83%88%E3%83%94%E3%83%83%E3%82%AF" target="_blank" class="quick-card">
+                    <i class="fas fa-chalkboard-teacher" style="color: #3498db;"></i>
+                    <h3 style="font-size: 1.1rem;">CLILトピック</h3>
+                    <p>外部サイトへ</p>
                 </a>
 
-                <a href="#" class="quick-card" onclick="alert('工事中'); return false;">
-                    <i class="fas fa-tools"></i>
-                    <h3>ボタン3</h3>
-                    <p>工事中</p>
+                <a href="assets/images/calendar/calendar_2_gakudo.pdf" target="_blank" class="quick-card">
+                    <i class="fas fa-calendar-alt" style="color: #2ecc71;"></i>
+                    <h3 style="font-size: 1.1rem;">ガクドウカレンダー</h3>
+                    <p>PDFを開く</p>
+                </a>
+
+                <a href="https://www.eiken.or.jp/eiken-junior/" target="_blank" class="quick-card">
+                    <i class="fas fa-award" style="color: #f1c40f;"></i>
+                    <h3 style="font-size: 1.1rem;">英検Jr.のお知らせ</h3>
+                    <p>外部サイトへ</p>
+                </a>
+
+                <a href="https://cambridgecentre.jp/exams/yle/" target="_blank" class="quick-card">
+                    <i class="fas fa-globe-europe" style="color: #9b59b6;"></i>
+                    <h3 style="font-size: 1.05rem; line-height: 1.4;">ケンブリッジヤングラーナーズ<br>英語検定(YLE)のお知らせ</h3>
+                    <p>外部サイトへ</p>
                 </a>
             </div>
         </section>

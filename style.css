@@ -1,14 +1,14 @@
 :root {
-    --primary-color: #FBBF24;
-    /* Amber 400 - Soft Yellow */
-    --secondary-color: #FB923C;
-    /* Orange 400 - Soft Orange */
-    --accent-color: #FCA5A5;
-    /* Red 300 - Soft Coral */
+    --primary-color: #FCD34D;
+    /* Amber 300 - Lighter Yellow */
+    --secondary-color: #FDBA74;
+    /* Orange 300 - Lighter Orange */
+    --accent-color: #FDB5B5;
+    /* Red 300 - Lighter Coral */
     --text-color: #57534E;
     /* Stone 600 - Muted Brown-Gray */
-    --bg-color: #FFFBEB;
-    /* Amber 50 - Soft Cream */
+    --bg-color: #FFFDF7;
+    /* Amber 50 - Lighter Cream */
     --card-bg: #FFFFFF;
     --font-main: "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
     --font-heading: "Montserrat", sans-serif;
@@ -39,22 +39,46 @@ body {
 header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 40px 20px;
+    padding: 30px 20px;
     text-align: center;
     border-bottom-left-radius: 50% 20px;
     border-bottom-right-radius: 50% 20px;
     margin-bottom: 40px;
 }
 
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 70px;
+    width: auto;
+}
+
+.header-logo-left {
+    left: 20px;
+}
+
+.header-logo-right {
+    right: 20px;
+}
+
 header h1 {
     font-family: var(--font-heading);
     font-weight: 800;
     letter-spacing: 1px;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2.0rem;
+    margin-bottom: 15px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Document & Form Lists */
 .doc-list {
@@ -684,13 +708,15 @@ footer p {
 .global-nav a {
     color: white;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 16px;
     border-radius: 25px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.28);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
@@ -698,15 +724,16 @@ footer p {
 }
 
 .global-nav a:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .global-nav a.active,
 .global-nav a:focus {
     background: white;
     color: var(--primary-color);
+    text-shadow: none;
 }
 
 /* ========================================

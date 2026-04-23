@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,103 +8,207 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+JP:wght@400;700&display=swap"
-        rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .mountain-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
 
+        .top-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .bottom-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .rule-btn {
+            background: #fff;
+            border-radius: 16px;
+            padding: 25px 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            border: 2px solid transparent;
+        }
+
+        .rule-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .top-btn {
+            width: 350px;
+            background: linear-gradient(to bottom, #fff, #fffdf7);
+            border: 2px solid #FCD34D;
+        }
+
+        .bottom-btn {
+            width: 300px;
+        }
+
+        .rule-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        .rule-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .rule-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .badge {
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Hidden admin trigger */
+        .hidden-admin-trigger {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.02);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            z-index: 100;
+        }
+        
+        .hidden-admin-trigger:hover {
+            background: rgba(0,0,0,0.08);
+        }
+
+        .hidden-admin-trigger i {
+            color: rgba(0,0,0,0.1);
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        // Password protection for this page (Prompt every time)
+        document.documentElement.style.display = 'none'; // Hide content while prompting
+        let pwd = prompt('このページの閲覧にはパスワードが必要です。');
+        if (pwd === 'eakids123') {
+            document.documentElement.style.display = ''; // Show content
+        } else {
+            alert('パスワードが間違っています。ホームページに戻ります。');
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
 <body>
 
     <header>
         <div class="container">
-            <h1>ENGLISH ACCESS / EA Kids</h1>
-            <!-- Global Navigation -->
+            <div class="header-inner">
+                <img src="assets/images/logo/EA logo.png" alt="ENGLISH ACCESS" class="header-logo header-logo-left">
+                <h1>規約等書類</h1>
+                <img src="assets/images/logo/EAKIDS_logo -transparent.png" alt="EA Kids" class="header-logo header-logo-right">
+            </div>
             <nav class="global-nav">
                 <a href="index.html">ホーム</a>
                 <a href="2026-class-guide.html">クラス案内</a>
                 <a href="material-fees.html">教材費</a>
                 <a href="calendar.html">カレンダー</a>
-                <a href="clil-songs.html">CLIL<br>ソング</a>
+                <a href="clil-songs.html">CLILソング</a>
                 <a href="documents.html" class="active">規約等書類</a>
                 <a href="forms.html">届書提出</a>
                 <a href="gakudo.html">ガクドウ</a>
+                <a href="gamerize-dictionary.html">ゲーマライズ辞書</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
-
         <section>
-            <h2><i class="fas fa-file-contract"></i> 規約等書類一覧</h2>
-            <p>各コースの規約書類を閲覧できます。閲覧にはパスワードが必要です。</p>
+            <h2 style="text-align: center; border: none; margin-bottom: 10px;">
+                <i class="fas fa-file-contract"></i> 各種規約
+            </h2>
+            <p style="text-align: center; color: #666;">該当するコースのボタンをクリックして、規約（PDF）をご確認ください。</p>
 
-            <div class="doc-list">
-                <div class="doc-card" onclick="downloadDoc('preschool_rules.pdf')">
-                    <i class="fas fa-file-pdf doc-icon"></i>
-                    <div class="doc-info">
-                        <div class="doc-title">プリスクール規約書類</div>
-                        <div class="doc-desc">PDF 閲覧</div>
+            <div class="mountain-layout">
+                <!-- Top Row (Mountain Peak) -->
+                <div class="top-row">
+                    <div class="rule-btn top-btn" onclick="downloadDoc('assets/images/rules/EA_rules.pdf')">
+                        <i class="fas fa-star rule-icon" style="color: #FBBF24;"></i>
+                        <div class="rule-title">EAのきまり</div>
+                        <div class="rule-badges">
+                            <span class="badge">全コース共通</span>
+                        </div>
                     </div>
-                    <i class="fas fa-eye lock-icon"></i>
                 </div>
 
-                <div class="doc-card" onclick="downloadDoc('afterschool_rules.pdf')">
-                    <i class="fas fa-file-pdf doc-icon"></i>
-                    <div class="doc-info">
-                        <div class="doc-title">アフタースクール規約書類</div>
-                        <div class="doc-desc">PDF 閲覧</div>
+                <!-- Bottom Row (Mountain Base) -->
+                <div class="bottom-row">
+                    <div class="rule-btn bottom-btn" onclick="downloadDoc('assets/images/rules/rules_kids.pdf')">
+                        <i class="fas fa-child rule-icon"></i>
+                        <div class="rule-title">EA Kids規約</div>
+                        <div class="rule-badges">
+                            <span class="badge">45分月謝</span>
+                            <span class="badge">サタデー</span>
+                            <span class="badge">ガクドウ</span>
+                            <span class="badge">プリスクール</span>
+                            <span class="badge">アフタースクール</span>
+                        </div>
                     </div>
-                    <i class="fas fa-eye lock-icon"></i>
-                </div>
 
-                <div class="doc-card" onclick="downloadDoc('gakudo_rules.pdf')">
-                    <i class="fas fa-file-pdf doc-icon"></i>
-                    <div class="doc-info">
-                        <div class="doc-title">ガクドウコース規約書類</div>
-                        <div class="doc-desc">PDF 閲覧</div>
+                    <div class="rule-btn bottom-btn" onclick="downloadDoc('assets/images/rules/rules_ticket.pdf')">
+                        <i class="fas fa-ticket-alt rule-icon" style="color: #10B981;"></i>
+                        <div class="rule-title">チケット制コース規約</div>
+                        <div class="rule-badges">
+                            <span class="badge">プライベート</span>
+                            <span class="badge">グループレッスン</span>
+                        </div>
                     </div>
-                    <i class="fas fa-eye lock-icon"></i>
-                </div>
 
-                <div class="doc-card" onclick="downloadDoc('saturday_k1-k3_rules.pdf')">
-                    <i class="fas fa-file-pdf doc-icon"></i>
-                    <div class="doc-info">
-                        <div class="doc-title">サタデーコースK1-K3クラス規約書類</div>
-                        <div class="doc-desc">（3歳～年長）</div>
+                    <div class="rule-btn bottom-btn" onclick="downloadDoc('assets/images/rules/rules_adult.pdf')">
+                        <i class="fas fa-user-graduate rule-icon" style="color: #3B82F6;"></i>
+                        <div class="rule-title">ENGLISH ACCESS規約</div>
+                        <div class="rule-badges">
+                            <span class="badge">中高生45分月謝</span>
+                            <span class="badge">大人月謝</span>
+                        </div>
                     </div>
-                    <i class="fas fa-eye lock-icon"></i>
-                </div>
-
-                <div class="doc-card" onclick="downloadDoc('saturday_elementary_rules.pdf')">
-                    <i class="fas fa-file-pdf doc-icon"></i>
-                    <div class="doc-info">
-                        <div class="doc-title">サタデーコース規約書類</div>
-                        <div class="doc-desc">（小学生）</div>
-                    </div>
-                    <i class="fas fa-eye lock-icon"></i>
-                </div>
-
-                <div class="doc-card" onclick="downloadDoc('45min_kids_rules.pdf')">
-                    <i class="fas fa-file-pdf doc-icon"></i>
-                    <div class="doc-info">
-                        <div class="doc-title">45分クラス規約書類</div>
-                        <div class="doc-desc">（幼稚園・小学生）</div>
-                    </div>
-                    <i class="fas fa-eye lock-icon"></i>
-                </div>
-
-                <div class="doc-card" onclick="downloadDoc('45min_teens_adults_rules.pdf')">
-                    <i class="fas fa-file-pdf doc-icon"></i>
-                    <div class="doc-info">
-                        <div class="doc-title">45分クラス規約書類</div>
-                        <div class="doc-desc">（中高生・大人）</div>
-                    </div>
-                    <i class="fas fa-eye lock-icon"></i>
                 </div>
             </div>
         </section>
+    </div>
 
+    <!-- Hidden Admin Button -->
+    <div class="hidden-admin-trigger" id="adminBtn">
+        <i class="fas fa-lock"></i>
     </div>
 
     <footer>
@@ -116,17 +219,33 @@
 
     <script>
         function downloadDoc(filename) {
-            const password = prompt("パスワードを入力してください:");
-            // 簡易的なパスワードチェック (仮のパスワード: eakids2026)
-            if (password === "eakids2026") {
-                // 新しいタブでPDFを開く (View First)
-                // 実際の運用では filename が正しいパスであることを確認してください
-                window.open(filename, '_blank');
-            } else if (password !== null) {
-                alert("パスワードが間違っています。");
-            }
+            window.open(filename, '_blank');
         }
+
+        // Hidden admin button logic (3 clicks)
+        let clickCount = 0;
+        let clickTimer = null;
+        
+        document.getElementById('adminBtn').addEventListener('click', function() {
+            clickCount++;
+            
+            if (clickCount === 1) {
+                clickTimer = setTimeout(() => {
+                    clickCount = 0;
+                }, 1500); // 1.5 seconds to do 3 clicks
+            }
+            
+            if (clickCount >= 3) {
+                clearTimeout(clickTimer);
+                clickCount = 0;
+                const pwd = prompt("管理者用パスワードを入力してください:");
+                if (pwd === "eakids2026") {
+                    window.location.href = "documents-enrollment.html";
+                } else if (pwd !== null) {
+                    alert("パスワードが違います");
+                }
+            }
+        });
     </script>
 </body>
-
 </html>
