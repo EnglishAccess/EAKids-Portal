@@ -129,17 +129,7 @@
             .dl-btn { width: 100%; max-width: 280px; justify-content: center; }
         }
     </style>
-    <script>
-        // Password protection for this page (Prompt every time)
-        document.documentElement.style.display = 'none'; // Hide content while prompting
-        let pwd = prompt('このページの閲覧にはパスワードが必要です。');
-        if (pwd === 'eakids123') {
-            document.documentElement.style.display = ''; // Show content
-        } else {
-            alert('パスワードが間違っています。ホームページに戻ります。');
-            window.location.href = 'index.html';
-        }
-    </script>
+
 </head>
 <body>
 
@@ -164,12 +154,6 @@
         </nav>
     </header>
 
-    <nav class="gm-subnav">
-        <a href="gamerize-dictionary.html" class="active">ホーム</a>
-        <a href="gamerize-page2.html">初めての方へ</a>
-        <a href="gamerize-page3.html">ページ3</a>
-        <a href="gamerize-page4.html">ページ4</a>
-    </nav>
 
     <!-- メインボディ: クリーム色 + 星デコ -->
     <div class="gm-body">

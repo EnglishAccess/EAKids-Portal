@@ -384,17 +384,7 @@
             }
         }
     </style>
-    <script>
-        // Password protection for this page (Prompt every time)
-        document.documentElement.style.display = 'none'; // Hide content while prompting
-        let pwd = prompt('このページの閲覧にはパスワードが必要です。');
-        if (pwd === 'eakids123') {
-            document.documentElement.style.display = ''; // Show content
-        } else {
-            alert('パスワードが間違っています。ホームページに戻ります。');
-            window.location.href = 'index.html';
-        }
-    </script>
+
 </head>
 
 <body>
@@ -420,12 +410,6 @@
         </nav>
     </header>
 
-    <nav class="gm-subnav">
-        <a href="gamerize-dictionary.html">ホーム</a>
-        <a href="gamerize-page2.html" class="active">初めての方へ</a>
-        <a href="gamerize-page3.html">ページ3</a>
-        <a href="gamerize-page4.html">ページ4</a>
-    </nav>
 
     <!-- メインボディ: クリーム色 + 星デコ -->
     <div class="gm-body">
@@ -465,7 +449,6 @@
                 <h4 class="chapter-title">導入編</h4>
                 <section class="guide-section">
                     <h3>① ゲーマライズ辞書とは？</h3>
-                    <p>メイン紹介動画と軽い説明をここでご案内します。</p>
                     <div class="image-placeholder-box" style="padding: 0; overflow: hidden;">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/jh14-7Eobow?si=eFVQJUpyKxMzWvay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; min-height: 260px; border: 0;"></iframe>
                     </div>
@@ -714,7 +697,13 @@
                     <p>少しアドベンチャーを見てみましょう。</p>
                     <p>こちらのアドベンチャーは、コミュニケーションクラス（AAS2）の宿題です。3/3-3/9の授業内容となっているので、次回のレッスンが3/6にある場合は、こちらのアドベンチャーが宿題となります。</p>
                     <p>授業内容にAとBがある場合、違う単語を扱っていたり、それぞれで単語と文章を扱っていたりします。どちらも取り組むようにしてください。</p>
-                    <div class="important-box">メモ: 進行中アドベンチャーの保存/リセットに関する注意文は、画像準備後に最終文言を追記予定です。</div>
+                    <div class="image-placeholder-box filled">
+                        <img src="参考画像/Gamerize page/せんせいからのアドベンチャーEX.jpg" alt="せんせいからのアドベンチャーEX" class="guide-image">
+                    </div>
+                    <div class="important-box">
+                        メモ：アドベンチャーのそれぞれのゲームはクリアした段階で進行状況が保存され、アドベンチャーメニューの一番上に表示されます。例えば、スラッシャーゲームをクリアした後にアプリを閉じたり王国画面に戻っても、次はアーチェリーゲームからスタートすることができます。<br><br>
+                        進行中のアドベンチャーがあるときに、別のアドベンチャーを選ぶと、進行中のアドベンチャーの情報が消えて最初からやり直しになるので注意してください。
+                    </div>
                 </section>
 
                 <section class="guide-section" style="margin-bottom: 0;">
@@ -724,9 +713,9 @@
                     </div>
                     <p style="font-weight: 800; color: #1a3d6e;">お疲れ様でした！<br>以上で初めての方向けのガイドは終了です！</p>
                     <p>ゲーマライズ辞書に取り組むことで、楽しいからやる！やるからわかる！わかるから楽しい！のいい循環を生み出すことができます。</p>
-                    <p>生徒様に継続的に取り組んでいただくために、王国づくりやアバターの着せ替え、ペットの成長など、さまざまな工夫がありますので、次ページでご紹介しますね！</p>
+                    <p>生徒様に継続的に取り組んでいただくために、王国づくりやアバターの着せ替え、ペットの成長など、さまざまな工夫があります。現在紹介ページを執筆中ですので、ぜひスタッフにお問い合わせください！</p>
                     <div class="next-guide-link">
-                        <a href="gamerize-page3.html"><i class="fas fa-arrow-right"></i> 次のページへ進む</a>
+                        <a href="#" style="background: #9aa6b2; cursor: default; pointer-events: none;"><i class="fas fa-hammer"></i> 工事中</a>
                     </div>
                 </section>
             </div>
