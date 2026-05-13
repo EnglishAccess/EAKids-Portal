@@ -16,7 +16,7 @@ new_grid = '''<div class="quick-access-grid">
                 
                 <a href="https://sites.google.com/view/eakids-clil-topic-k-song/%E3%83%9B%E3%83%BC%E3%83%A0/clil%E3%83%88%E3%83%94%E3%83%83%E3%82%AF" target="_blank" class="quick-card">
                     <i class="fas fa-chalkboard-teacher" style="color: #3498db;"></i>
-                    <h3 style="font-size: 1.1rem;">CLILトピチE��</h3>
+                    <h3 style="font-size: 1.1rem;">CLILトピチE��</h3>
                     <p>外部サイトへ</p>
                 </a>
 
@@ -34,7 +34,7 @@ new_grid = '''<div class="quick-access-grid">
 
                 <a href="https://cambridgecentre.jp/exams/yle/" target="_blank" class="quick-card">
                     <i class="fas fa-globe-europe" style="color: #9b59b6;"></i>
-                    <h3 style="font-size: 1.05rem; line-height: 1.4;">ケンブリチE��ヤングラーナ�Eズ<br>英語検宁EYLE)のお知らせ</h3>
+                    <h3 style="font-size: 1.05rem; line-height: 1.4;">ケンブリチE��ヤングラーナ�Eズ<br>英語検宁EYLE)のお知らせ</h3>
                     <p>外部サイトへ</p>
                 </a>
             </div>
@@ -50,12 +50,12 @@ pwd_script = '''    <script>
         // Password protection for this page
         if (sessionStorage.getItem('auth_pages') !== 'eakids123') {
             document.documentElement.style.display = 'none'; // Hide content while prompting
-            let pwd = prompt('こ�Eペ�Eジの閲覧にはパスワードが忁E��です、E);
+            let pwd = prompt('こ�Eペ�Eジの閲覧にはパスワードが忁E��です、E);
             if (pwd === 'eakids123') {
                 sessionStorage.setItem('auth_pages', 'eakids123');
                 document.documentElement.style.display = ''; // Show content
             } else {
-                alert('パスワードが間違ってぁE��す。�Eームペ�Eジに戻ります、E);
+                alert('パスワードが間違ってぁE��す。�Eームペ�Eジに戻ります、E);
                 window.location.href = 'index.html';
             }
         }
