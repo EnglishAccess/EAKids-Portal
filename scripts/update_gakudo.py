@@ -8,22 +8,22 @@ with open(gakudo_path, 'r', encoding='utf-8') as f:
 
 # Replace the quick-access-grid
 new_grid = '''<div class="quick-access-grid">
-                <a href="assets/images/GKD/rules_gakudo.pdf" target="_blank" class="quick-card">
+                <a href="assets/docs/rules/rules_gakudo.pdf" target="_blank" class="quick-card">
                     <i class="fas fa-file-pdf" style="color: #e74c3c;"></i>
-                    <h3 style="font-size: 1.1rem;">ガクドウの決まり</h3>
-                    <p>PDFを開く</p>
+                    <h3 style="font-size: 1.1rem;">ガクドウの決まめE/h3>
+                    <p>PDFを開ぁE/p>
                 </a>
                 
                 <a href="https://sites.google.com/view/eakids-clil-topic-k-song/%E3%83%9B%E3%83%BC%E3%83%A0/clil%E3%83%88%E3%83%94%E3%83%83%E3%82%AF" target="_blank" class="quick-card">
                     <i class="fas fa-chalkboard-teacher" style="color: #3498db;"></i>
-                    <h3 style="font-size: 1.1rem;">CLILトピック</h3>
+                    <h3 style="font-size: 1.1rem;">CLILトピチE��</h3>
                     <p>外部サイトへ</p>
                 </a>
 
-                <a href="assets/images/calendar/calendar_2_gakudo.pdf" target="_blank" class="quick-card">
+                <a href="assets/docs/calendar/calendar_2_gakudo.pdf" target="_blank" class="quick-card">
                     <i class="fas fa-calendar-alt" style="color: #2ecc71;"></i>
                     <h3 style="font-size: 1.1rem;">ガクドウカレンダー</h3>
-                    <p>PDFを開く</p>
+                    <p>PDFを開ぁE/p>
                 </a>
 
                 <a href="https://www.eiken.or.jp/eiken-junior/" target="_blank" class="quick-card">
@@ -34,7 +34,7 @@ new_grid = '''<div class="quick-access-grid">
 
                 <a href="https://cambridgecentre.jp/exams/yle/" target="_blank" class="quick-card">
                     <i class="fas fa-globe-europe" style="color: #9b59b6;"></i>
-                    <h3 style="font-size: 1.05rem; line-height: 1.4;">ケンブリッジヤングラーナーズ<br>英語検定(YLE)のお知らせ</h3>
+                    <h3 style="font-size: 1.05rem; line-height: 1.4;">ケンブリチE��ヤングラーナ�Eズ<br>英語検宁EYLE)のお知らせ</h3>
                     <p>外部サイトへ</p>
                 </a>
             </div>
@@ -50,12 +50,12 @@ pwd_script = '''    <script>
         // Password protection for this page
         if (sessionStorage.getItem('auth_pages') !== 'eakids123') {
             document.documentElement.style.display = 'none'; // Hide content while prompting
-            let pwd = prompt('このページの閲覧にはパスワードが必要です。');
+            let pwd = prompt('こ�Eペ�Eジの閲覧にはパスワードが忁E��です、E);
             if (pwd === 'eakids123') {
                 sessionStorage.setItem('auth_pages', 'eakids123');
                 document.documentElement.style.display = ''; // Show content
             } else {
-                alert('パスワードが間違っています。ホームページに戻ります。');
+                alert('パスワードが間違ってぁE��す。�Eームペ�Eジに戻ります、E);
                 window.location.href = 'index.html';
             }
         }
@@ -74,3 +74,4 @@ for file in protected_files:
             f.write(content)
 
 print('Updated gakudo and added password protection!')
+
