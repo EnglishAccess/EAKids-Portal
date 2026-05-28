@@ -9,17 +9,6 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script>
-        // Password protection for this page (Prompt every time)
-        document.documentElement.style.display = 'none'; // Hide content while prompting
-        let pwd = prompt('このページの閲覧にはパスワードが必要です。');
-        if (pwd === 'eakids123') {
-            document.documentElement.style.display = ''; // Show content
-        } else {
-            alert('パスワードが間違っています。ホームページに戻ります。');
-            window.location.href = 'index.html';
-        }
-    </script>
 </head>
 
 <body>
@@ -51,6 +40,12 @@
             <h2><i class="fas fa-child"></i> ガクドウ</h2>
 
             <div class="quick-access-grid">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfW-4PQf5ELZU4v0kRisQ698U_B6kGE2ZvzpBMm30akNrsqHw/viewform" target="_blank" class="quick-card">
+                    <i class="fas fa-clipboard-list" style="color: #e67e22;"></i>
+                    <h3 style="font-size: 1.1rem;">振替申請用フォーム<br>(ガクドウ)</h3>
+                    <p>外部フォームへ</p>
+                </a>
+
                 <a href="assets/docs/rules/rules_gakudo.pdf" target="_blank" class="quick-card">
                     <i class="fas fa-file-pdf" style="color: #e74c3c;"></i>
                     <h3 style="font-size: 1.1rem;">ガクドウの決まり</h3>
