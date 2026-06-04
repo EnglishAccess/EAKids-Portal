@@ -21,6 +21,8 @@
         .top-row {
             display: flex;
             justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
             width: 100%;
         }
 
@@ -54,7 +56,7 @@
         }
 
         .top-btn {
-            width: 350px;
+            width: 300px;
             background: linear-gradient(to bottom, #fff, #fffdf7);
             border: 2px solid #FCD34D;
         }
@@ -151,11 +153,27 @@
             <div class="mountain-layout">
                 <!-- Top Row (Mountain Peak) -->
                 <div class="top-row">
+                    <div class="rule-btn top-btn" onclick="downloadDoc('assets/docs/rules/rules_pre_after.pdf')">
+                        <i class="fas fa-shapes rule-icon" style="color: #EC4899;"></i>
+                        <div class="rule-title">プリアフタースクールのきまり</div>
+                        <div class="rule-badges">
+                            <span class="badge">プリ・アフター</span>
+                        </div>
+                    </div>
+
                     <div class="rule-btn top-btn" onclick="downloadDoc('assets/docs/rules/ea_kids_rules_2026.pdf')">
                         <i class="fas fa-star rule-icon" style="color: #FBBF24;"></i>
                         <div class="rule-title">EA Kidsのきまり</div>
                         <div class="rule-badges">
-                            <span class="badge">全コース共通</span>
+                            <span class="badge">45分・サタデー</span>
+                        </div>
+                    </div>
+
+                    <div class="rule-btn top-btn" onclick="downloadDoc('assets/docs/rules/rules_gakudo.pdf')">
+                        <i class="fas fa-home rule-icon" style="color: #10B981;"></i>
+                        <div class="rule-title">ガクドウのきまり</div>
+                        <div class="rule-badges">
+                            <span class="badge">ガクドウ</span>
                         </div>
                     </div>
                 </div>
