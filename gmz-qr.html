@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Gamerize Special Share | ENGLISH ACCESS/EA Kids</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .auth-container {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .auth-container.hidden {
+            transform: scale(0.9);
+            opacity: 0;
+            pointer-events: none;
+            display: none;
+        }
+
+        .logo-wrap {
+            margin-bottom: 25px;
+        }
+        .logo-wrap img {
+            height: 60px;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin: 0 0 10px;
+            font-weight: 800;
+            color: #F5C800;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        p.subtitle {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0 0 30px;
+            line-height: 1.5;
+        }
+
+        /* パスワード入力フォーム */
+        .password-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.1rem;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 16px 16px 16px 48px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .password-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #F5C800;
+            box-shadow: 0 0 15px rgba(245, 200, 0, 0.2);
+        }
+
+        .btn-submit {
+            background: #F5C800;
+            color: #1a3d6e;
+            border: none;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(245, 200, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 200, 0, 0.5);
+            background: #ffd60a;
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        /* エラー時のシェイクアニメーション */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        .shake {
+            animation: shake 0.4s ease-in-out;
+            border-color: #ff4d4d !important;
+            box-shadow: 0 0 15px rgba(255, 77, 77, 0.3) !important;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            font-size: 0.85rem;
+            margin-top: -8px;
+            text-align: left;
+            display: none;
+            font-weight: 700;
+        }
+
+        /* QRコード表示エリア（アンロック後） */
+        .qr-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 28px;
+            padding: 40px;
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .qr-card.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .qr-title {
+            color: #F5C800;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 0 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .qr-desc {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .qr-image-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            display: inline-block;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .qr-image-container img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-download {
+            background: #1b6fa8;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(27, 111, 168, 0.3);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn-download:hover {
+            background: #2389cf;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(27, 111, 168, 0.5);
+        }
+
+        .btn-drive {
+            background: #0f9d58; /* Google Drive Green */
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(15, 157, 88, 0.3);
+            border: none;
+        }
+
+        .btn-drive:hover {
+            background: #13b566;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(15, 157, 88, 0.5);
+        }
+
+        .btn-back {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- パスワード入力ゲート -->
+    <div id="auth-gate" class="auth-container">
+        <div class="logo-wrap">
+            <img src="assets/images/favicon.png" alt="EA Kids">
+        </div>
+        <h2>Gamerize Gate</h2>
+        <p class="subtitle">特別コードを入力して<br>シェア用QRコードを表示します。</p>
+        
+        <form id="pass-form" class="password-form" onsubmit="handleAuthSubmit(event)">
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="pass-input" class="password-input" placeholder="パスワードを入力..." required autocomplete="off">
+            </div>
+            <div id="error-msg" class="error-message">パスワードが正しくありません。</div>
+            <button type="submit" class="btn-submit">
+                認証する <i class="fas fa-key"></i>
+            </button>
+        </form>
+    </div>
+
+    <!-- QRコード表示エリア -->
+    <div id="qr-panel" class="qr-card">
+        <h2 class="qr-title">Gamerize QR</h2>
+        <p class="qr-desc">ゲーマライズ辞書の共有用QRコードです。<br>画像を長押しまたは下のボタンからダウンロードできます。</p>
+        
+        <div id="qr-img-placeholder" class="qr-image-container">
+            <!-- JavaScriptにて動的に挿入されます -->
+        </div>
+
+        <div class="actions">
+            <a href="assets/images/GmzshareQR.png" download="GmzshareQR.png" class="btn-action btn-download">
+                画像をダウンロード <i class="fas fa-download"></i>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1waDMnt-OFm3UcNANlhu5UzN3BJRQHRI5?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-action btn-drive">
+                Google ドライブを開く <i class="fab fa-google-drive"></i>
+            </a>
+            <a href="gamerize-dictionary.html" class="btn-action btn-back">
+                戻る <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const correctHash = "824190c6ee7b903e35e5b227db3a0ea2142e0f82dea21646ab94b899532ebc9d";
+        let failedAttempts = 0;
+
+        // 初期ロード時：既にセッション認証済みか確認
+        window.addEventListener('DOMContentLoaded', () => {
+            const token = sessionStorage.getItem('gmz_auth_token');
+            if (token === correctHash) {
+                revealQRCode();
+            }
+        });
+
+        // SHA-256ハッシュ計算
+        async function sha256(str) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(str);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // フォーム送信時の認証ハンドラ
+        async function handleAuthSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('pass-input');
+            const errorMsg = document.getElementById('error-msg');
+            const password = input.value;
+
+            // ハッシュ検証
+            const hash = await sha256(password);
+
+            if (hash === correctHash) {
+                // 認証成功
+                sessionStorage.setItem('gmz_auth_token', hash);
+                revealQRCode();
+            } else {
+                // 認証失敗
+                failedAttempts++;
+                input.value = "";
+                input.classList.add('shake');
+                errorMsg.style.display = 'block';
+
+                setTimeout(() => {
+                    input.classList.remove('shake');
+                }, 400);
+
+                if (failedAttempts >= 3) {
+                    alert("認証失敗が続いたため、元のページに戻ります。");
+                    window.location.href = 'gamerize-dictionary.html';
+                }
+            }
+        }
+
+        // QRコード画像表示とフェードインアニメーション
+        function revealQRCode() {
+            const gate = document.getElementById('auth-gate');
+            const panel = document.getElementById('qr-panel');
+            const imgPlaceholder = document.getElementById('qr-img-placeholder');
+
+            // 1. QRコード画像を動的に生成して挿入 (DOMに最初からパスを残さない)
+            const img = document.createElement('img');
+            img.src = 'assets/images/GmzshareQR.png';
+            img.alt = 'Gmz Share QR Code';
+            imgPlaceholder.appendChild(img);
+
+            // 2. UI切り替え
+            gate.classList.add('hidden');
+            
+            // レイアウト遷移のための微小な遅延
+            setTimeout(() => {
+                gate.style.display = 'none';
+                panel.style.display = 'block';
+                // リフローを強制してから表示フラグを付与
+                panel.offsetHeight; 
+                panel.classList.add('visible');
+            }, 300);
+        }
+    </script>
+</body>
+</html>

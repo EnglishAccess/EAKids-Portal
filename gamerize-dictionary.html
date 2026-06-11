@@ -128,6 +128,27 @@
             .dl-btns { flex-direction: column; align-items: center; }
             .dl-btn { width: 100%; max-width: 280px; justify-content: center; }
         }
+
+        /* 隠しリンク用ボタン */
+        .hidden-trigger {
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(26, 61, 110, 0.08); /* 背景や他の要素に紛れる非常に薄いネイビー */
+            cursor: pointer;
+            z-index: 10000;
+            font-size: 14px;
+            transition: color 0.3s;
+            user-select: none;
+        }
+        .hidden-trigger:hover {
+            color: rgba(26, 61, 110, 0.25); /* ホバー時にわずかに視認しやすく */
+        }
     </style>
 
 </head>
@@ -240,6 +261,50 @@
     <footer>
         <div class="container"><p>&copy; 2026 ENGLISH ACCESS/EA Kids</p></div>
     </footer>
+
+    <!-- 隠しリンクボタン -->
+    <div id="hidden-trigger" class="hidden-trigger">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <script>
+        (function() {
+            let clickCount = 0;
+            let clickTimeout;
+            const trigger = document.getElementById('hidden-trigger');
+            
+            trigger.addEventListener('click', function() {
+                clickCount++;
+                clearTimeout(clickTimeout);
+                
+                if (clickCount === 3) {
+                    clickCount = 0;
+                    const password = prompt("管理者用パスワードを入力してください:");
+                    if (password) {
+                        // パスワードをSHA-256でハッシュ化
+                        const encoder = new TextEncoder();
+                        const data = encoder.encode(password);
+                        crypto.subtle.digest('SHA-256', data).then(hashBuffer => {
+                            const hashArray = Array.from(new Uint8Array(hashBuffer));
+                            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                            
+                            // パスワードハッシュ: 824190c6ee7b903e35e5b227db3a0ea2142e0f82dea21646ab94b899532ebc9d (Gamerizespecialcode)
+                            if (hashHex === '824190c6ee7b903e35e5b227db3a0ea2142e0f82dea21646ab94b899532ebc9d') {
+                                sessionStorage.setItem('gmz_auth_token', hashHex);
+                                window.location.href = 'gmz-qr.html';
+                            } else {
+                                alert("パスワードが正しくありません。");
+                            }
+                        });
+                    }
+                } else {
+                    clickTimeout = setTimeout(function() {
+                        clickCount = 0;
+                    }, 2000);
+                }
+            });
+        })();
+    </script>
 
 </body>
 </html>
