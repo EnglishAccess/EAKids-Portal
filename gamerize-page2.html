@@ -356,6 +356,61 @@
             font-weight: 700;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .guide-section[id] {
+            scroll-margin-top: 16px;
+        }
+
+        .gm-toc {
+            background: #f7fbff;
+            border: 2px solid #d6e6f7;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 40px;
+        }
+
+        .gm-toc-title {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #1a3d6e;
+            margin: 0 0 12px;
+            text-align: center;
+        }
+
+        .gm-toc-group + .gm-toc-group {
+            margin-top: 12px;
+        }
+
+        .gm-toc-chapter {
+            font-weight: 700;
+            color: #1a3d6e;
+            margin: 0 0 6px;
+            font-size: 0.95rem;
+        }
+
+        .gm-toc ol {
+            list-style: none;
+            margin: 0;
+            padding: 0 0 0 8px;
+        }
+
+        .gm-toc li {
+            margin: 4px 0;
+        }
+
+        .gm-toc a {
+            color: #2b5d9b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .gm-toc a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 640px) {
             .gm-header-bar .logo-gamerize-wrap img {
                 height: 80px;
@@ -444,6 +499,35 @@
                     <p style="color: #555; font-size: 1.05rem; font-weight: 600;">The Gamerize Dictionary はじめてガイド</p>
                 </div>
 
+                <nav class="gm-toc" aria-label="目次">
+                    <p class="gm-toc-title">目次</p>
+                    <div class="gm-toc-group">
+                        <p class="gm-toc-chapter">導入編</p>
+                        <ol>
+                            <li><a href="#step1">① ゲーマライズ辞書とは？</a></li>
+                            <li><a href="#step2">② ダウンロードの案内</a></li>
+                            <li><a href="#step3">③ ログインの仕方</a></li>
+                        </ol>
+                    </div>
+                    <div class="gm-toc-group">
+                        <p class="gm-toc-chapter">プレイ編</p>
+                        <ol>
+                            <li><a href="#step4">④ 最初のチュートリアルの説明</a></li>
+                            <li><a href="#step5">⑤ テントの説明</a></li>
+                            <li><a href="#step6">⑥ アドベンチャーマップ</a></li>
+                            <li><a href="#step7">⑦ 4つのゲームの説明</a></li>
+                            <li><a href="#step8">⑧ アドベンチャー終了後の流れ</a></li>
+                        </ol>
+                    </div>
+                    <div class="gm-toc-group">
+                        <p class="gm-toc-chapter">活用編</p>
+                        <ol>
+                            <li><a href="#step9">⑨ 宿題のやり方（とっても重要！）</a></li>
+                            <li><a href="#step10">⑩ アドベンチャーメニューの見方</a></li>
+                        </ol>
+                    </div>
+                </nav>
+
                 <section class="guide-section">
                     <h3 class="welcome-head"><img src="参考画像/Gamerize page/Gamerize logo.png" alt="Gamerizeロゴ" class="welcome-logo">「ゲーマライズ辞書」にようこそ！</h3>
                     <p>このページでは、初めての方向けに最初のステップをご紹介します。</p>
@@ -451,7 +535,7 @@
                 </section>
 
                 <h4 class="chapter-title">導入編</h4>
-                <section class="guide-section">
+                <section class="guide-section" id="step1">
                     <h3>① ゲーマライズ辞書とは？</h3>
                     <div class="image-placeholder-box" style="padding: 0; overflow: hidden;">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/jh14-7Eobow?si=eFVQJUpyKxMzWvay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; min-height: 260px; border: 0;"></iframe>
@@ -465,7 +549,7 @@
                     <div class="important-box">重要: コミュニケーションクラス・フォニックスクラス・ガクドウクラス・サタデークラスの宿題は、ゲーマライズ辞書から出ます。</div>
                 </section>
 
-                <section class="guide-section">
+                <section class="guide-section" id="step2">
                     <h3>② ダウンロードの案内</h3>
                     <p>まずはアプリをダウンロードしましょう。</p>
                     <div class="qr-grid" style="gap: 30px; margin-top: 24px;">
@@ -484,7 +568,7 @@
                     </div>
                 </section>
 
-                <section class="guide-section">
+                <section class="guide-section" id="step3">
                     <h3>③ ログインの仕方</h3>
                     <p>ログイン画面の画像を確認しながら進めます。</p>
                     <div class="image-row">
@@ -499,7 +583,7 @@
                 </section>
 
                 <h4 class="chapter-title">プレイ編</h4>
-                <section class="guide-section">
+                <section class="guide-section" id="step4">
                     <h3>④ 最初のチュートリアルの説明</h3>
                     <p>王国画面が開いたら最初のチュートリアルが始まります。王様が挨拶していますね。</p>
                     <div class="section-separator"></div>
@@ -557,7 +641,7 @@
                     <p>まずは画面右下のテントアイコンを押しましょう！</p>
                 </section>
 
-                <section class="guide-section">
+                <section class="guide-section" id="step5">
                     <h3>⑤ テントの説明</h3>
                     <p>テントでは、アドベンチャーで学ぶ単語を先に学習できます。単語カードのスピーカーで発音を聞き、カードタップで単語/文章を切り替えて単語を覚えましょう。</p>
                     <p>イラストと単語の組み合わせを覚えたら、矢印ボタンでアドベンチャーマップに戻りましょう。</p>
@@ -571,7 +655,7 @@
                     </div>
                 </section>
 
-                <section class="guide-section">
+                <section class="guide-section" id="step6">
                     <h3>⑥ アドベンチャーマップ</h3>
                     <p>アバターのいる旗を押して、1つ目のゲームを始めましょう。</p>
                     <div class="image-placeholder-box filled">
@@ -579,7 +663,7 @@
                     </div>
                 </section>
 
-                <section class="guide-section">
+                <section class="guide-section" id="step7">
                     <h3>⑦ 4つのゲームの説明</h3>
                     <p>ひとつのアドベンチャーの中には、4つのゲームがあります。</p>
 
@@ -645,7 +729,7 @@
                     <p>バトルが終わったら、アドベンチャーはクリアです！お疲れ様でした！</p>
                 </section>
 
-                <section class="guide-section">
+                <section class="guide-section" id="step8">
                     <h3>⑧ アドベンチャー終了後の流れ</h3>
                     <p>アドベンチャー終了後は王国画面に戻ります。</p>
                     <div class="image-placeholder-box filled">
@@ -674,7 +758,7 @@
                 </section>
 
                 <h4 class="chapter-title">活用編</h4>
-                <section class="guide-section">
+                <section class="guide-section" id="step9">
                     <h3>⑨ 宿題のやり方（とっても重要！）</h3>
                     <p>ここからは普段の宿題の取り組み方をご案内します。</p>
                     <div class="image-placeholder-box filled">
@@ -687,7 +771,7 @@
                     <p>モンスターが襲ってきている場合でも、まずは一旦無視して「はい」をタップ。先にアドベンチャーメニューへの行き方を確認しましょう。</p>
                 </section>
 
-                <section class="guide-section" style="margin-bottom: 10px;">
+                <section class="guide-section" id="step10" style="margin-bottom: 10px;">
                     <h3>⑩ アドベンチャーメニューの見方</h3>
                     <div class="image-placeholder-box filled">
                         <img src="参考画像/Gamerize page/せんせいからのアドベンチャー.jpg" alt="せんせいからのアドベンチャー" class="guide-image">
