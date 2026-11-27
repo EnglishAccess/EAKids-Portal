@@ -1117,3 +1117,18 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+/* ===== 2027年度テーマ（緑） ===== */
+body.theme-2027 {
+    --primary-color: #86EFAC;
+    /* Green 300 */
+    --secondary-color: #4ADE80;
+    /* Green 400 */
+    --accent-color: #A7F3D0;
+    /* Emerald 200 */
+    --bg-color: #F6FDF8;
+    /* Light mint cream */
+}
+
+body.theme-2027 .category-header {
+    background-color: #E8F5E9 !important;
+}
