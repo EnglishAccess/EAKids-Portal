@@ -567,6 +567,21 @@ footer p {
     }
 }
 
+/* 縦長の教材画像（表紙・中身見本） */
+.image-grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.image-grid.book-pages img {
+    aspect-ratio: auto;
+}
+
+@media (max-width: 768px) {
+    .image-grid.grid-4.book-pages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* Gamerize Section Styles */
 .gamerize-logo {
     display: block;
